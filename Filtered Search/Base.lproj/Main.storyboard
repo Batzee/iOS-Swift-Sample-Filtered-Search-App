@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ccH-oN-Y1E">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Customer Search-->
+        <scene sceneID="Lot-41-s1I">
+            <objects>
+                <tableViewController id="1h5-Dh-4CS" customClass="CustomerTableTableViewController" customModule="Filtered_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XXp-AT-WvV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for Customer" showsScopeBar="YES" id="Q0J-I2-l3L">
+                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Chocolate</string>
+                                <string>Hard</string>
+                                <string>All</string>
+                                <string>Other</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="1h5-Dh-4CS" id="lGf-u7-3hp"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cellid" id="br2-bv-sub">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br2-bv-sub" id="HiE-XN-vSU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MkG-U4-Qr1" kind="show" identifier="customerDetail" id="txZ-OJ-uXp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1h5-Dh-4CS" id="kku-ur-TRO"/>
+                            <outlet property="delegate" destination="1h5-Dh-4CS" id="GSA-UK-XeI"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Ecn-5V-b1W"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Customer Search" id="r9e-8k-wjc"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="t0c-Mq-lvh" id="ODf-6j-wvk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAS-tj-ECI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="EpI-E0-YCG">
+                    <connections>
+                        <outlet property="delegate" destination="1h5-Dh-4CS" id="tZB-xJ-d03"/>
+                        <outlet property="searchContentsController" destination="1h5-Dh-4CS" id="ICS-K1-cxQ"/>
+                        <outlet property="searchResultsDataSource" destination="1h5-Dh-4CS" id="Yvj-QC-F5q"/>
+                        <outlet property="searchResultsDelegate" destination="1h5-Dh-4CS" id="hjM-Pb-sWk"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="t0c-Mq-lvh">
+                    <connections>
+                        <outlet property="delegate" destination="1h5-Dh-4CS" id="YeJ-Ud-RyE"/>
+                        <outlet property="searchBar" destination="Q0J-I2-l3L" id="lQC-jN-uAY"/>
+                        <outlet property="searchContentsController" destination="1h5-Dh-4CS" id="fXu-X1-lml"/>
+                        <outlet property="searchResultsDataSource" destination="1h5-Dh-4CS" id="ObS-da-mmH"/>
+                        <outlet property="searchResultsDelegate" destination="1h5-Dh-4CS" id="ltB-Xw-LNd"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="817" y="417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1hI-EW-h8U">
+            <objects>
+                <viewController id="MkG-U4-Qr1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GUg-zY-YlB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ayh-ni-EZ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4BH-lm-xzj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pPe-HK-blI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHE-6f-d9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0V3-R7-wld">
+            <objects>
+                <navigationController id="ccH-oN-Y1E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C5f-aT-ss3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1h5-Dh-4CS" kind="relationship" relationship="rootViewController" id="KIB-7e-Xd5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fb-cF-WrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="416"/>
+        </scene>
+    </scenes>
+</document>
