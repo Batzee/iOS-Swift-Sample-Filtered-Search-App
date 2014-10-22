@@ -1,7 +1,7 @@
 iOS-Swift-Sample-Filtered-Search-App
 ====================================
 
-A simple search with filters
+A simple search app with filters using Swift for iPhones
 
 Developed based on the tutorial in this link
 http://www.raywenderlich.com/76519/add-table-view-search-swift
